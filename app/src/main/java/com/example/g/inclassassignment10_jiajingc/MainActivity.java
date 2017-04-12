@@ -1,5 +1,6 @@
 package com.example.g.inclassassignment10_jiajingc;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,18 @@ public class MainActivity extends AppCompatActivity {
             case "Object":
                 startActivity(new Intent(this, ObjectActivity.class));
                 break;
+            case "List":
+                startActivity(new Intent(this, ListActivity.class));
+                break;
+            case "Camera":
+                startActivity(new Intent(this, CameraActivity.class));
+                break;
+
+            case "Storage":
+                startActivity(new Intent(this, StorageActivity.class));
+                break;
+
+
 
         }
     }
