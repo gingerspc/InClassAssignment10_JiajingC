@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void toActivity(View view) {
 
-        switch (((Button) view).getText().toString() {
+        switch (((Button) view).getText().toString()) {
             case "Object":
                 startActivity(new Intent(this, ObjectActivity.class));
                 break;

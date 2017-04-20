@@ -19,7 +19,7 @@ import java.io.IOException;
 public class StorageActivity extends AppCompatActivity {
 
     private StorageReference mStorageRef;
-    private imageView imageView;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +43,14 @@ public class StorageActivity extends AppCompatActivity {
         Uri file = Uri.fromFile(new File("path/to/images/rivers.jpg"));
         StorageReference riversRef = mStorageRef.child("images/rivers.jpg");
 
+        final File finalLocalFile = localFile;
         riversRef.putFile(file)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
                         Picasso.with(StorageActivity.this)
-                                .load(localFile)
+                                .load(finalLocalFile)
                                 .resize(imageView.getWidth(), imageView.getHeight())
                                 .centerInside()
                                 .into(imageView);

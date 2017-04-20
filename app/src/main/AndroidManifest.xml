@@ -2,13 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.g.inclassassignment10_jiajingc">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
-
 
     <application
         android:allowBackup="true"
@@ -23,29 +22,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ObjectActivity"
+        <activity
+            android:name=".ObjectActivity"
             android:label="BlogPost Object"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".ListActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ListActivity"
             android:label="Read BlogPosts"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".CameraAcitivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CameraActivity"
             android:label="Camera"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".StorageActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".StorageActivity"
             android:label="Load Image"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.g.inclassassignment10_jiajingc"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/detail_name">
+        </activity>
     </application>
-
-    <provider
-        android:name="android.support.v4.content.FileProvider"
-        android:authorities="com.dashengz.inclassassignment10_dashengz"
-        android:exported="false"
-        android:grantUriPermissions="true">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/file_paths"></meta-data>
-    </provider>
-
 
 </manifest>

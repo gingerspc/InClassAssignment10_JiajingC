@@ -1,12 +1,13 @@
 package com.example.g.inclassassignment10_jiajingc;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  * Created by g on 4/5/17.
  */
 
-public class BlogPost {
+public class BlogPost implements Serializable {
     String title;
     String body;
     String time;
@@ -41,7 +42,7 @@ public class BlogPost {
         this.time = time;
     }
 
-    private String toReadableTime(){
+    public String toReadableTime(){
         long postTime = Long.valueOf(time);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(postTime);

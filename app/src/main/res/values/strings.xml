@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">InClassAssignment10_JiajingC</string>
+
+    <string name="object_name">BlogPost Object</string>
+    <string name="list_name">Read BlogPosts</string>
+    <string name="camera_name">Cameras</string>
+    <string name="storage_name">Load Images</string>
+    <string name="detail_name">Blogpost Detail</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.example.g.inclassassignment10_jiajingc;
 
 import android.icu.util.Calendar;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,12 +23,13 @@ public class ObjectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_object);
 
         // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference postRef = database.getReference("post");
+        database = FirebaseDatabase.getInstance();
+        postRef = database.getReference("post");
 
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void save(View view) {
         EditText titleField = (EditText) findViewById(R.id.title);
         EditText bodyField = (EditText) findViewById(R.id.body);
@@ -39,13 +42,13 @@ public class ObjectActivity extends AppCompatActivity {
         BlogPost post = new BlogPost(title, body, time);
 
         postRef.setValue(post);
-        postsRef.push().setValue(post);
+        postRef.push().setValue(post);
 
         TextView statusView = (TextView) findViewById(R.id.display_status);
         statusView.setText(post.toString());
 
-        statusView.setVisibility(View.VISIBLE)
-        titleField.setText(--);
-        bodyField.setText(--);
+        statusView.setVisibility(View.VISIBLE);
+        titleField.setText("");
+        bodyField.setText("");
     }
 }
